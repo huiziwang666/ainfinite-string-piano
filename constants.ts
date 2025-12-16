@@ -5,16 +5,20 @@ import { PitchRange, InstrumentName } from './types';
 
 export const CONFIG = {
   // Minimum time (ms) between triggering the same string
-  DEBOUNCE_MS: 120, 
-  
+  DEBOUNCE_MS: 120,
+
   // Visuals
-  PARTICLE_COUNT_PER_HIT: 12,
+  PARTICLE_COUNT_PER_HIT: 15,
   STRING_THICKNESS_BASE: 4,
   STRING_THICKNESS_ACTIVE: 8,
-  
+
   // Physics (Visual only)
   STRING_TENSION: 0.2,
   STRING_DAMPING: 0.9,
+
+  // Kid-friendly settings
+  CONFETTI_TRIGGER_COUNT: 5, // Notes needed to trigger confetti
+  CONFETTI_PARTICLE_COUNT: 50,
 };
 
 // Rainbow colors for strings
@@ -37,6 +41,10 @@ export const INSTRUMENTS: { label: string; value: InstrumentName }[] = [
   { label: '🎼 Harp', value: 'orchestral_harp' },
   { label: '🪵 Marimba', value: 'marimba' },
   { label: '🎻 Violin', value: 'violin' },
+  { label: '🔔 Xylophone', value: 'xylophone' },
+  { label: '🎁 Music Box', value: 'music_box' },
+  { label: '✨ Celesta', value: 'celesta' },
+  { label: '🔔 Bells', value: 'glockenspiel' },
 ];
 
 // MIDI Note Definitions
@@ -64,3 +72,12 @@ export const generateStringConfigs = (count: number, range: PitchRange) => {
   }
   return configs;
 };
+
+// Confetti colors
+export const CONFETTI_COLORS = [
+  '#FF595E', '#FF924C', '#FFCA3A', '#8AC926', '#1982C4', '#6A4C93',
+  '#FF6B9D', '#C44DFF', '#00D4AA', '#FFD93D',
+];
+
+// Particle shape options
+export const PARTICLE_SHAPES = ['star', 'heart', 'note', 'sparkle', 'circle'] as const;
