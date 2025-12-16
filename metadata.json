@@ -1,0 +1,7 @@
+{
+  "name": "AInfinite AI Piano",
+  "description": "An AI-powered air-gesture piano. Use hand gestures to play music in the air!",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
